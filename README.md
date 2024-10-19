@@ -1,16 +1,11 @@
-Create a ubuntu machine 
-sudo su
-wget https://raw.githubusercontent.com/akshu20791/Deployment-script/main/jenkins.sh
-ls
-chmod 777 jenkins.sh
-ls
-./jenkins.sh
- apt install docker.io -y
- service docker start
-sudo usermod -aG docker $USER
-service jenkins restart
- sudo usermod -aG docker jenkins
- service jenkins restart
+Implemented Continuous Integration & Continuous Deployment using following tools:
 
+✓ Git - For version control for tracking changes in the code files
+✓ Maven – For Continuous Build
+✓ Jenkins - For continuous integration and continuous deployment
+✓ Docker - For deploying containerized applications
+✓ Ansible - Configuration management tools
+✓ Terraform - For creation of infrastructure.
+✓ Prometheus and Grafana – For Automated Monitoring and Report Visualization
 
- Go to jenkins -> create pipeline and select https://github.com/akshu20791/Banking-java-project/ as source code project
+This project will be about how to test the services and deploy code to dev/stage/prod etc, just on a click of button
