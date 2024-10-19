@@ -3,37 +3,37 @@ pipeline{
     stages{
         stage('checkout the code from github'){
             steps{
-                 git url: 'https://github.com/akshu20791/Banking-java-project/'
+                 git url: 'https://github.com/mhanumesh07/CICD_Banking_Finance/'
                  echo 'github url checkout'
             }
         }
-        stage('codecompile with akshat'){
+        stage('CODE COMPILE'){
             steps{
                 echo 'starting compiling'
                 sh 'mvn compile'
             }
         }
-        stage('codetesting with akshat'){
+        stage('CODE TESTING'){
             steps{
                 sh 'mvn test'
             }
         }
-        stage('qa with akshat'){
+        stage('Q&A'){
             steps{
                 sh 'mvn checkstyle:checkstyle'
             }
         }
-        stage('package with akshat'){
+        stage('PACKAGE'){
             steps{
                 sh 'mvn package'
             }
         }
-        stage('run dockerfile'){
+        stage('RUN DOCKERFILE'){
           steps{
                sh 'docker build -t myimg .'
            }
          }
-        stage('port expose'){
+        stage('PORT EXPOSE'){
             steps{
                 sh 'docker run -dt -p 8091:8091 --name c000 myimg'
             }
